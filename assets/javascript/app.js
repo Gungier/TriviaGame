@@ -12,17 +12,32 @@ var correct = 0;
 var incorrect = 0;
 
     
-var trivArray = [
-    'a',
-    'b',
-    'c',
-    'd',
-    'e',
-    'f',
-];
+var trivia = []
+    trivia.push({
+        red : 'xyz',
+        orange : 'xyz',
+        yellow : 'xyz',
+        green : 'xyz',
+        blue : 'xyz',
+        purple : 'xyz',
+    });
+    console.log("Trivia: " + trivia);
+    console.log(trivia.yellow);
+
+
 
     
-function shuffle(trivArray) {
+
+function shuffle (trivArray) {
+
+    var trivArray = [
+        'a',
+        'b',
+        'c',
+        'd',
+        'e',
+        'f',
+    ];
     var index = trivArray.length, temporaryValue, randomIndex;
 
     while (0 !== index) {
@@ -35,10 +50,11 @@ function shuffle(trivArray) {
 
         console.log("trivArray: " + trivArray);
     }
-    retrun = trivArray;
+    return trivArray;
 
 }
 
+shuffle();
 
 var start = function () {
 
@@ -46,7 +62,6 @@ var start = function () {
 
 
     var trivArray = suffle(trivArray);
-
     var trivial = $("<div>");
     trivial.attr({
         "class": 'question',
