@@ -1,34 +1,68 @@
 #mq-detector {
     visibility: hidden;
 }
-.rslides {
-    position: relative;
-    list-style: none;
-    overflow: hidden;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    }
-  
-  .rslides li {
-    -webkit-backface-visibility: hidden;
-    position: absolute;
-    display: none;
-    width: 100%;
-    left: 0;
-    top: 0;
-    }
-  
-  .rslides li:first-child {
-    position: relative;
-    display: block;
-    float: left;
-    }
-  
-  .rslides img {
-    display: block;
-    height: auto;
-    float: left;
-    width: 100%;
-    border: 0;
-    }
+body {
+  background-image: url("/images/superheroes.jpg");
+  background-position: relative;
+  height: 100vh;
+  background-repeat: repeat;
+  text-align: center;
+  background: #fff;
+}
+
+header {
+  text-align: center;
+  font-size: 50px;
+  padding-top: 20px;
+  color: #000;
+}
+h1 {
+  text-align: center;
+  font-size: 50px;
+  padding-top: 20px;
+  color: #000;
+}
+
+.start {
+  text-align: center;
+  padding-top: 50px;
+}
+
+p {
+  color: #3E2723;
+}
+
+.gameSpace {
+  height: 100vh;
+  background-position: relative;
+  margin-right: 150px;
+  margin-left: 150px;
+}
+
+.score {
+  background: #c3664a;
+  border: none;
+  z-index: 1;
+}
+
+.scores {
+  font-size: 1.5em;
+  z-index: 1;
+}
+
+.badge {
+  background: #AB47BC;
+  font-size: 0.9em;
+}
+.footer,
+.push {
+height: 4em;
+text-align: center;
+z-index: 1;
+}
+
+img {
+  background-position:relative;
+  width:700px;
+  height:400px;
+}
