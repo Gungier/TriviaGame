@@ -2,25 +2,23 @@
     visibility: hidden;
 }
 body {
-  background-image: url("/images/superheroes.jpg");
-  background-position: relative;
-  height: 100vh;
-  background-repeat: repeat;
-  text-align: center;
-  background: #fff;
+  background-image: url("../images/superheroes.jpg");
+  height: 50%;
+  color: #ffffff;
+  
 }
 
 header {
   text-align: center;
   font-size: 50px;
   padding-top: 20px;
-  color: #000;
+  color: #ffffff;
 }
 h1 {
   text-align: center;
   font-size: 50px;
   padding-top: 20px;
-  color: #000;
+  color: #ffffff;
 }
 
 .start {
@@ -29,16 +27,28 @@ h1 {
 }
 
 p {
-  color: #3E2723;
+  color: #ffffff;
 }
 
 .gameSpace {
-  height: 100vh;
-  background-position: relative;
   margin-right: 150px;
   margin-left: 150px;
+  text-emphasis-color: #ffffff;
 }
-
+.questions {
+  color: #ffffff;
+  text-align: center;
+}
+.h2 {
+  color: #ffffff;
+}
+.h3 {
+  color: #ffffff;
+}
+.answers {
+  color: #ffffff;
+  text-align: center;
+}
 .score {
   background: #c3664a;
   border: none;

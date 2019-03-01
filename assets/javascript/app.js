@@ -47,12 +47,15 @@ $(document).on('click touch', '.answerBtn', function (e) {
 });
 
 $(document).on('click touch', '#start', function (e) {
-    $('#timer').text('Time Remaining: ' +  quiz.counter);
-    quiz.startTrivia();
-    quiz.countdown();
-    console.log("timer: " + quiz.startTrivia);
-});
+    $('#timer').text('Time Remaining: ' + quiz.counter);
+    $("button").click(function () {
+        $("h2").css("color", "white");
 
+        quiz.startTrivia();
+        quiz.countdown();
+        console.log("timer: " + quiz.startTrivia);
+    });
+});
 //Trivia Questions
 
 var questions = [{
@@ -76,6 +79,15 @@ var questions = [{
     rightAnswer: "Jay Garrick",
     image: "assets/images/theFlash.jpeg",
 }];
+var quest = $("<h3>");
+
+quest.attr({
+    "class": 'textColor',
+});
+
+quest.css({
+    'font-color': 'white'
+});
 
 var quiz = {
     questions: questions,
@@ -83,9 +95,10 @@ var quiz = {
     counter: secLeft,
     correct: 0,
     incorrect: 0,
+
     countdown: function () {
-        quiz.counter --;
-        $("#game-timer").text("Time Remaining: " + quiz.counter);
+        quiz.counter--;
+        $("#timer").text("Time Remaining: " + quiz.counter);
 
         console.log("Timer:" + quiz.counter)
 
@@ -95,27 +108,32 @@ var quiz = {
             console.log(countdown)
         }
     },
+
+
     startTrivia: function () {
         timer = setInterval(quiz.countdown, 1000);
         gameArea.html('<h2>' + questions[this.currentQuestion].question + '</h2>');
         for (var i = 0; i < questions[this.currentQuestion].answers.length; i++) {
-            gameArea.append("<button class='answerBtn' id='button'"+ 'data-name="' + questions[this.currentQuestion].answers[i] + '">' + questions[this.currentQuestion].answers[i] + '</button>');
+            gameArea.append("<button class='answerBtn' id='button'" + 'data-name="' + questions[this.currentQuestion].answers[i] + '">' + questions[this.currentQuestion].answers[i] + '</button>');
         }
 
     },
     nextQuestion: function () {
         quiz.counter = secLeft;
-        $('#game-timer').html("Time Remaining: " + quiz.counter);
+        $('#timer').html("Time Remaining: " + quiz.counter);
         quiz.currentQuestion++;
         quiz.startTrivia();
     },
     timesUp: function () {
         clearInterval(timer);
-        $('#game-timer').html("Time Remaining: " + quiz.counter);
+        $('#timer').html("Time Remaining: " + quiz.counter);
 
         gameArea.html('<h2>Times Up</h2>');
-        gameArea.append('<h3>The Right Choice was: ' + questions[this.currentQuestion].rightAnswer); 
+        gameArea.append('<h3>The Right Choice was: ' + questions[this.currentQuestion].rightAnswer);
         gameArea.append('img src="' + questions[this.currentQuestion].image + '"/>');
+        timesUp.css({
+            "font-color": "white"
+        });
 
         if (quiz.currentQuestion === questions.length - 1) {
             setTimeout(quiz.results, 3000);
@@ -128,11 +146,12 @@ var quiz = {
         clearInterval(timer);
 
         gameArea.html('<h2>Well done, here is your final score!</h2>');
-        $('#game-timer').html(quiz.counter);
+        $('#timer').html(quiz.counter);
         gameArea.append('<h3>Correct Answers: ' + quiz.correct + '</h3>');
         gameArea.append('<h3>Incorrect Answers: ' + quiz.incorrect + '</h3>');
         gameArea.append('<h3>Left Blank: ' + (questions.length - (quiz.incorrect + quiz.correct)) + '</h3>');
         gameArea.append("<br><button id='restart'>Think You Could Do Better?</button>");
+
     },
     clicked: function (e) {
         clearInterval(timer);
