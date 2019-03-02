@@ -33,17 +33,30 @@ p {
 .gameSpace {
   margin-right: 150px;
   margin-left: 150px;
-  text-emphasis-color: #ffffff;
+
 }
 .questions {
   color: #ffffff;
   text-align: center;
 }
-.h2 {
+.gameSpace h2 {
   color: #ffffff;
+  opacity: .7;
+  background-color: black;
+  
+
 }
-.h3 {
+
+.gameSpace #timer{
+  color: white;
+  background-color: black;
+  opacity: .7;
+  width: max-content;
+}
+.gameSpace h3 {
   color: #ffffff;
+  opacity: .7;
+  background-color: black;
 }
 .answers {
   color: #ffffff;

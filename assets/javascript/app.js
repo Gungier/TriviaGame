@@ -48,14 +48,12 @@ $(document).on('click touch', '.answerBtn', function (e) {
 
 $(document).on('click touch', '#start', function (e) {
     $('#timer').text('Time Remaining: ' + quiz.counter);
-    $("button").click(function () {
-        $("h2").css("color", "white");
+    
 
         quiz.startTrivia();
         quiz.countdown();
         console.log("timer: " + quiz.startTrivia);
     });
-});
 //Trivia Questions
 
 var questions = [{
